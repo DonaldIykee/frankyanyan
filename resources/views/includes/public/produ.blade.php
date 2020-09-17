@@ -12,7 +12,7 @@
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a href="index.html">Home</a> /</li>
+            <li><a href="{{route('home')}}">Home</a> /</li>
             <li>Products</li>
         </ul>
     </div>
@@ -23,20 +23,23 @@
             <h3 class="heading">Products</h3>
             <div class="main">
                 <div class="grid grid-column-2">
+                    @foreach ($products as $product)
                     <div class="column1">
-                        <a href="ecommerce-single.html" class="a-block"><img src="assets/images/e1.jpg"
+                        <a href="{{route('single.product', $product->id)}}" class="a-block"><img
+                                src="{{asset('storage/'. $product->img)}}" style="height: 240px; width:185px"
                                 class="img-responsive img-fluid" /></a>
-                        <a href="#para1">
-                            <p class="product-para">$1,099 </p>
+                        <a href="{{route('single.product', $product->id)}}">
+                            <p class="product-para" style="float: none;">{{$product->product_name}} </p>
                         </a>
-                        <a href="#price1">
+                        {{-- <a href="#price1">
                             <p class="price">$1,299</p>
-                        </a>
-                        <a href="#parahraph1">
-                            <p class="paragraph">Sed do dol et init sed unde tempor</p>
+                        </a> --}}
+                        <a href="{{route('single.product', $product->id)}}">
+                            <p class="paragraph">{{$product->product_description}}</p>
                         </a>
                     </div>
-                    <div class="column2">
+                    @endforeach
+                    {{-- <div class="column2">
                         <a href="ecommerce-single.html" class="a-block"><img src="assets/images/e2.jpg"
                                 class="img-responsive img-fluid" /></a>
                         <a href="#para2">
@@ -178,10 +181,11 @@
                         <a href="#parahraph4">
                             <p class="paragraph">Ut init sed unde enim ad minim</p>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-            <ul class="pagination">
+            {{$products->links()}}
+            {{-- <ul class="pagination">
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Start">Start
                     </a>
@@ -204,7 +208,7 @@
                     <a class="page-link rounded" href="#" aria-label="End"> End
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </section>

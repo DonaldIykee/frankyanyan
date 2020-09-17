@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\adminCategory;
 use App\adminProduct;
+use App\Project;
+use App\services;
 use App\teamMember;
 use Illuminate\Http\Request;
 
@@ -16,10 +18,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $product = adminCategory::all();
-        $members = teamMember::all();
+        $product_count = adminProduct::count();
+        $members_count = teamMember::count();
+        $services_count = services::count();
+        $projects_count = Project::count();
         // dd($product);
-        return view('admin.index', compact('product', 'members'));
+        return view('admin.index', compact('product_count', 'members_count', 'services_count', 'projects_count'));
         //
     }
 

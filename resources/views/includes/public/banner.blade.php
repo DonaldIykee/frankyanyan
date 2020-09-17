@@ -11,13 +11,9 @@
                         <a class="logo" href="index.html">
                             <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
                         </a> -->
-                    <h4>Frankyan Technology website</h4>
-                    <p>Maecenas id faucibus felis. Cras eu faucibus elit. Vestibulum ex risus, placerat mattis
-                        posuere ac, efficitur eleifend nibh. Vestibulum ante ipsum primis in faucibus orci
-                        luctus et
-                        ultrices posuere cubilia Curae; Nullam porttitor felis quis nibh finibus, ut ornare nisl
-                        placerat.</p>
-                    <a href="about.html" class="btn">Read More</a>
+                    <h4>Frankyan Technologies Ltd.</h4>
+                    <p>This is a company with the aim of solving series of ki ni kon </p>
+                    <a href="{{route('public.about')}}" class="btn">Read More</a>
                 </div>
             </div>
         </div>

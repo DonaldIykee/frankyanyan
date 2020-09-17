@@ -47,22 +47,22 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=UA-149859901-1'></script>
-    {{-- <script>
+    <script>
         window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-149859901-1');
-    </script> --}}
+    </script>
 
-    {{-- <script>
+    <script>
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
      ga('create', 'UA-149859901-1', 'demo.w3layouts.com');
      ga('require', 'eventTracker');
      ga('require', 'outboundLinkTracker');
      ga('require', 'urlChangeTracker');
      ga('send', 'pageview');
-    </script> --}}
+    </script>
     <script async src='{{asset('assets/js/auto.js')}}'></script>
 
     <meta name="robots" content="noindex">

@@ -20,7 +20,7 @@
                 <div class="footer17-top-left2_sur">
                     <h6>Products</h6>
                     <ul>
-                        <li><a href="services.html">Solar system</a></li>
+                        <li><a href="{{route('public.services')}}">Solar system</a></li>
                         {{-- <li><a href="services.html">Renewable energy</a></li>
                         <li><a href="services.html">Home improvements</a></li>
                         <li><a href="services.html">Solar Electric(PV)</a></li>
@@ -30,15 +30,15 @@
                 <div class="footer17-top-left3_sur">
                     <h6>Company</h6>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="ecommerce.html">Our Products</a></li>
+                        <li><a href="{{route('public.about')}}">About Us</a></li>
+                        <li><a href="{{route('pro')}}">Our Products</a></li>
                     </ul>
                 </div>
                 <div class="footer17-top-left4_sur">
                     <h6>More links</h6>
                     <ul>
-                        <li><a href="services.html">What we do</a></li>
-                        <li><a href="about.html">How it works</a></li>
+                        <li><a href="{{route('public.services')}}">What we do</a></li>
+                        <li><a href="{{route('public.about')}}">How it works</a></li>
                     </ul>
                 </div>
                 <div class="footer17-top-left5_sur">
@@ -56,12 +56,12 @@
 <!-- //footer17 -->
 
 <!-- copyright -->
-<div class="copyright text-center">
+{{-- <div class="copyright text-center">
     <div class="wrapper">
         <p class="copy-footer-29">© 2019 Solar Service. All rights reserved | Designed by <a
                 href="https://w3layouts.com" target="_blank">W3layouts</a></p>
     </div>
-</div>
+</div> --}}
 <!-- //copyright -->
 
 

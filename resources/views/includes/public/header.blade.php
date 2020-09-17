@@ -16,9 +16,9 @@
                     <input type="checkbox" id="drop">
                     <ul class="menu">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="{{route('public.about')}}">About</a></li>
                         <li><a href="{{route('pro')}}">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="{{route('public.services')}}">Services</a></li>
                         {{-- <li>
                         <!-- sumenu Drop Down -->
                         <label for="drop-3" class="toggle toogle-3">Pages <span class="angle-dropdown"
@@ -61,12 +61,12 @@
                             <label for="drop-4" class="toggle toogle-4">Pages <span class="angle-dropdown"
                                     aria-hidden="true"></span>
                             </label>
-                            <a href="#blog">Pages <span class="angle-dropdown" aria-hidden="true"></span></a>
+                            <a href="#">Pages <span class="angle-dropdown" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-4">
 
                             <ul>
-                                <li><a href="blog.html" class="drop-text">Projects</a></li>
-                                <li><a href="blog-single.html" class="drop-text">Our Team</a></li>
+                                <li><a href="{{route('public.projects')}}" class="drop-text">Projects</a></li>
+                                <li><a href="{{route('public.team')}}" class="drop-text">Our Team</a></li>
                             </ul>
                         </li>
                         {{-- <li>
@@ -83,7 +83,7 @@
                             <li><a href="ecommerce-cart.html" class="drop-text">Ecommerce cart</a></li>
                         </ul>
                     </li> --}}
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{route('public.contact')}}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
