@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newApp')
 @section('content' )
 <div class="display-ad" style="margin: 10px auto; display: block; text-align:center;">
     <!---728x90--->
@@ -12,7 +12,7 @@
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a href="{{route('home')}}">Home</a> /</li>
+            <li><a href="{{route('home.page')}}">Home</a> /</li>
             <li>Products</li>
         </ul>
     </div>
@@ -24,18 +24,18 @@
             <div class="main">
                 <div class="grid grid-column-2">
                     @foreach ($products as $product)
-                    <div class="column1">
-                        <a href="{{route('single.product', $product->id)}}" class="a-block"><img
-                                src="{{asset('storage/'. $product->img)}}" style="height: 240px; width:185px"
+                    <div class="column1" style="width: 275px">
+                        <a href="{{route('single.product', $product->slug)}}" class="a-block"><img
+                                src="{{asset('storage/'. $product->img)}}" style="height: 247px; width:187px"
                                 class="img-responsive img-fluid" /></a>
-                        <a href="{{route('single.product', $product->id)}}">
+                        <a href="{{route('single.product', $product->slug)}}">
                             <p class="product-para" style="float: none;">{{$product->product_name}} </p>
                         </a>
                         {{-- <a href="#price1">
                             <p class="price">$1,299</p>
                         </a> --}}
-                        <a href="{{route('single.product', $product->id)}}">
-                            <p class="paragraph">{{$product->product_description}}</p>
+                        <a href="{{route('single.product', $product->slug)}}">
+                            <p class="paragraph">{{Str::limit($product->product_description, 20)}}</p>
                         </a>
                     </div>
                     @endforeach

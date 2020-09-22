@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newApp')
 
 @section('content')
 <div class="display-ad" style="margin: 10px auto; display: block; text-align:center;">

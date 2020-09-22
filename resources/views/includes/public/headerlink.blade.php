@@ -14,7 +14,7 @@
     {{-- <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script> --}}
     <script src='{{asset('assets/plugins/jquery/jquery-3.1.0.min.js')}}'></script>
 
-    <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+    {{-- <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
     <script>
         (function(){
 	if(typeof _bsa !== 'undefined' && _bsa) {
@@ -65,4 +65,4 @@ if(typeof _bsa !== 'undefined' && _bsa) {
     </script>
     <script async src='{{asset('assets/js/auto.js')}}'></script>
 
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex"> --}}

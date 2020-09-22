@@ -4,7 +4,7 @@
         <div class="wrapper">
             <div class="footer17-top">
                 <div class="footer17-top-left1_sur">
-                    <h5><a href="index.html"><span class="fa fa-scribd" aria-hidden="true"></span>FRANKYAN</a>
+                    <h5><a href="{{route('home.page')}}"><span class="" aria-hidden="true"></span>FRANKYAN</a>
                     </h5>
                     <p>167 Nike lake Rd, Transekulu, Enugu</p>
                     <a href="tel:+2348075416014">+2348075416014</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 use App\adminProduct;
@@ -25,7 +26,7 @@ class PublicController extends Controller
     {
         $products = adminProduct::latest()->first()->paginate(4);
 
-        $projects = Project::all();
+        $projects = Project::simplePaginate(2);
 
         return view('includes.public.index', compact('products', 'projects'));
         //
@@ -40,7 +41,7 @@ class PublicController extends Controller
 
     public function projects()
     {
-        $projects = Project::all();
+        $projects = Project::paginate(25);
 
         return view('includes.public.projects', compact('projects'));
     }
@@ -121,18 +122,19 @@ class PublicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $product = adminProduct::findOrFail($id);
+        $product = adminProduct::whereSlug($slug)->firstOrFail();
+        // dd($product);
 
         return view('includes.public.productSing', compact('product'));
         //
     }
 
-    public function project($id)
+    public function project($slug)
     {
 
-        $project = Project::findOrFail($id);
+        $project = Project::whereSlug($slug)->firstOrfail();
 
         return view('includes.public.portifolio', compact('project'));
     }

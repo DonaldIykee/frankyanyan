@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\adminCategory;
 use App\adminProduct;
+use Carbon\carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+
 
 class adminProductsController extends Controller
 {
@@ -52,12 +56,14 @@ class adminProductsController extends Controller
         ]);
 
         $imageName = $request->file('img')->store('products');
+        $slug = Str::slug($data['product_name']) . Carbon::now()->timestamp;
 
         $products = new adminProduct([
             'product_name' => $data['product_name'],
             'product_description' => $data['product_description'],
             'img' => $imageName,
             'category_id' => $data['category'],
+            'slug' => $slug
         ]);
 
         $products->save();
@@ -104,7 +110,10 @@ class adminProductsController extends Controller
         $product = adminProduct::findOrFail($id);
 
         $data = $request->validate([
-            'product_name' => 'string|required',
+            'product_name' => [
+                'required',
+                Rule::unique('products', 'product_name')->ignore($id)
+            ],
             'product_description' => 'string|required',
             'img' => 'image|required',
             'category' => 'string|required:categories, id'
@@ -116,6 +125,7 @@ class adminProductsController extends Controller
         $product->product_description = $data['product_description'];
         $product->img = $imageName;
         $product->category_id = $data['category'];
+        $product->slug = Str::slug($data['product_name']) . Carbon::now()->timestamp;
 
         $product->save();
 

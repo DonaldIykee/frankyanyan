@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newApp')
 
 @section('content')
 <div class="display-ad" style="margin: 10px auto; display: block; text-align:center;">
@@ -13,7 +13,7 @@
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a href="{{route('home')}}">Home</a> /</li>
+            <li><a href="{{route('home.page')}}">Home</a> /</li>
             <li>Projects</li>
         </ul>
     </div>
@@ -42,15 +42,15 @@
 
 
                     <div class="product">
-                        <a href="{{route('single.project', $project->id)}}" data-lightbox="example-set"
+                        <a href="{{route('single.project', $project->slug)}}" data-lightbox="example-set"
                             data-title="Solar Power and Renewable energy service website.">
                             <figure>
                                 <img src="{{asset('storage/' . $project->image)}}" class="img-responsive" alt=""
                                     style="height:245px;" />
                             </figure>
                         </a>
-                        <div class="info-bg">
-                            <h5><a href="{{route('single.project', $project->id)}}">{{$project->title}}</a></h5>
+                        <div class="info-bg" style="height: 247px">
+                            <h5><a href="{{route('single.project', $project->slug)}}">{{$project->title}}</a></h5>
                             {{-- <span class="price">Safety</span> --}}
                             <p>{{$project->Description}}</p>
                         </div>
@@ -60,10 +60,16 @@
                 </div>
             </section>
 
-
         </div>
     </div>
+    <ul class="pagination">
+        <li class="page-item">
+            {{$projects->links()}}
+        </li>
+
+    </ul>
     <!-- Products4 block -->
 </div>
+
 
 @endsection

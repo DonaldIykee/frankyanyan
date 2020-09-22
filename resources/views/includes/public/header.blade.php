@@ -15,7 +15,7 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop">
                     <ul class="menu">
-                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('home.page')}}">Home</a></li>
                         <li><a href="{{route('public.about')}}">About</a></li>
                         <li><a href="{{route('pro')}}">Products</a></li>
                         <li><a href="{{route('public.services')}}">Services</a></li>

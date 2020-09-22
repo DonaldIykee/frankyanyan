@@ -55,6 +55,11 @@
                                     id="exampleInputPassword1">
                             </div>
 
+                            {{-- <div class="form-group">
+                                <label for="exampleInputEmail1">Slug</label>
+                                <input type="text" class="form-control" name="slug" title="slug" id="exampleInputEmail1">
+                            </div> --}}
+
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

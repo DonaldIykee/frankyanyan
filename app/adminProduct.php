@@ -12,7 +12,8 @@ class adminProduct extends Model
         'category_id',
         'product_name',
         'img',
-        'product_description'
+        'product_description',
+        'slug',
     ];
     //
 

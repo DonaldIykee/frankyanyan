@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\adminCategory;
 use App\Project;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class ProjectController extends Controller
 {
@@ -50,12 +53,14 @@ class ProjectController extends Controller
         ]);
 
         $imageName = $request->file('image')->store('projectImg');
+        $slug = Str::slug($data['title']) . Carbon::now()->timestamp;
 
         $project = new Project([
             'image' => $imageName,
             'description' => $data['description'],
             'category_id' => $data['category'],
-            'title' => $data['title']
+            'title' => $data['title'],
+            'slug' => $slug,
         ]);
 
         $project->save();
@@ -100,18 +105,23 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
 
         $data = $request->validate([
-            'title' => 'string|required',
+            'title' => [
+                'required',
+                Rule::unique('projects', 'title')->ignore($id)
+            ],
             'image' => 'image|required',
             'description' => 'string|required',
             'category' => 'string|required:categories, id'
         ]);
 
         $imageName = $request->file('image')->store('projectImg');
+        $slug = Str::slug($data['title']) . Carbon::now()->timestamp;
 
         $project->title = $data['title'];
         $project->description = $data['description'];
         $project->image = $imageName;
         $project->category_id = $data['category'];
+        $project->slug = $slug;
 
         $project->save();
 

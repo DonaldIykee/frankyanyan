@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newApp')
 @section('content')
 
 <div class="display-ad" style="margin: 10px auto; display: block; text-align:center;">
@@ -11,7 +11,7 @@
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a href="{{route('home')}}">Home</a> /</li>
+            <li><a href="{{route('home.page')}}">Home</a> /</li>
             <li>Product</li>
         </ul>
     </div>

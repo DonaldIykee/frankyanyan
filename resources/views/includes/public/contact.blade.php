@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newApp')
 @section('content')
 <div class="display-ad" style="margin: 8px auto; display: block; text-align:center;">
     <!---728x90--->
@@ -15,6 +15,11 @@
         </ul>
     </div>
 </section>
+@if(session('message'))
+<div class="card-sub bg-success">
+    {{session('message')}}
+</div>
+@endif
 <!-- contacts -->
 <section class="contacts-9-main" id="contact">
     <div class="contacts-9">

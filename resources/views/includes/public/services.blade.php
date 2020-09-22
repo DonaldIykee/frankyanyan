@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newApp')
 
 @section('content')
 
@@ -12,7 +12,7 @@
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a href="{{route('home')}}">Home</a> /</li>
+            <li><a href="{{route('home.page')}}">Home</a> /</li>
             <li>Services</li>
         </ul>
     </div>
