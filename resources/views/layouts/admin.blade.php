@@ -26,7 +26,7 @@
 
 
     <!-- Javascripts -->
-    @include('includes.footerlinks')
+    @include('includes.links')
 
     @yield('scripts')
 </body>

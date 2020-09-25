@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\teamMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class adminTeamMembersController extends Controller
 {
@@ -45,12 +46,20 @@ class adminTeamMembersController extends Controller
             'image' => 'required|image'
         ]);
 
-        $imageName = $request->file('image')->store('memberImg');
+        // $imageName = $request->file('image')->store('memberImg');
+        // $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+        // // dd($imageName);
+        // $destination = public_path('uploads');
+        // dd($destination . '/' . $filename);
+
+        // $path = Storage::move($imageName, $destination . '/' . $filename);
+        $path = Storage::putFile('uploads', $request->file('image'), 'public');
+        // dd($path);
 
         $teamMembers = new teamMember([
             'name' => $data['name'],
             'position' => $data['position'],
-            'image' => $imageName
+            'image' => $path
         ]);
 
         $teamMembers->save();

@@ -25,7 +25,8 @@
                     @foreach($teams as $team)
                     <div class="image-one">
                         <a href="team-single.html">
-                            <img src="{{asset('storage/' . $team->image)}}" class="arrow-png img-responsive" />
+                            <img src="{{asset('storage/' . $team->image)}}" class="arrow-png img-responsive"
+                                style="height: 180px" />
                             <h4>{{$team->name}}</h4>
                             <p>{{$team->position}}</p>
                             {{-- <div class="buttons-teams2">
