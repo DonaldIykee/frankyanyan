@@ -46,13 +46,15 @@
                                         <a class="btn btn-info btn-xs" href="{{route('services.edit', $service->id)}}">
                                             Edit Services
                                         </a>
-                                        <button type="submit" class="btn btn-danger btn-xs delete"
-                                            data-target="{{$service->id}}">Delete Services
-                                        </button>
+
                                         <form action="{{route('services.destroy', $service->id)}}" id="{{$service->id}}"
                                             method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
+
+                                            <button type="submit" class="btn btn-danger btn-xs delete"
+                                                data-target="{{$service->id}}">Delete Services
+                                            </button>
 
                                         </form>
                                     </td>

@@ -17,6 +17,7 @@
                             a Project</a>
                     </div>
                 </div>
+                <br />
                 <div class="card-body">
                     {{-- @include('includes.admin.alert') --}}
                     <div class="table-responsive">
@@ -48,14 +49,14 @@
                                         <a class="btn btn-info btn-xs" href="{{route('Project.edit', $project->id)}}">
                                             Edit Project
                                         </a>
-                                        <button type="submit" class="btn btn-danger btn-xs delete"
-                                            data-target="{{$project->id}}">Delete Project
-                                        </button>
+
                                         <form action="{{route('Project.destroy', $project->id)}}" id="{{$project->id}}"
                                             method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
-
+                                            <button type="submit" class="btn btn-danger btn-xs delete"
+                                                data-target="{{$project->id}}">Delete Project
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>

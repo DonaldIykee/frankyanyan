@@ -47,13 +47,15 @@
                                             href="{{route('categories.edit', $category->id)}}">
                                             Edit Category
                                         </a>
-                                        <button type="submit" class="btn btn-danger btn-xs delete"
-                                            data-target="{{$category->id}}">Delete Category
-                                        </button>
+
                                         <form action="{{route('categories.destroy', $category->id)}}"
                                             id="{{$category->id}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
+
+                                            <button type="submit" class="btn btn-danger btn-xs delete"
+                                                data-target="{{$category->id}}">Delete Category
+                                            </button>
 
                                         </form>
                                     </td>

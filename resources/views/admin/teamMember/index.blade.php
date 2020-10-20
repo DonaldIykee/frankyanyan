@@ -17,6 +17,7 @@
                             Team member</a>
                     </div>
                 </div>
+                <br />
                 <div class="card-body">
                     {{-- @include('includes.admin.alert') --}}
                     <div class="table-responsive">
@@ -50,13 +51,15 @@
                                             href="{{route('teamMembers.edit', $member->id)}}">
                                             Edit Member
                                         </a>
-                                        <button type="submit" class="btn btn-danger btn-xs delete"
-                                            data-target="{{$member->id}}">Delete Member
-                                        </button>
+
                                         <form action="{{route('teamMembers.destroy', $member->id)}}"
                                             id="{{$member->id}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
+
+                                            <button type="submit" class="btn btn-danger btn-xs delete"
+                                                data-target="{{$member->id}}">Delete Member
+                                            </button>
 
                                         </form>
                                     </td>

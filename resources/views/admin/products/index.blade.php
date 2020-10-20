@@ -18,6 +18,7 @@
                             a Product</a>
                     </div>
                 </div>
+                <br />
                 <div class="card-body">
                     {{-- @include('includes.admin.alert') --}}
                     <div class="table-responsive">
@@ -48,13 +49,15 @@
                                         <a class="btn btn-info btn-xs" href="{{route('products.edit', $product->id)}}">
                                             Edit Product
                                         </a>
-                                        <button type="submit" class="btn btn-danger btn-xs delete"
-                                            data-target="{{$product->id}}">Delete Product
-                                        </button>
+
                                         <form action="{{route('products.destroy', $product->id)}}" id="{{$product->id}}"
                                             method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
+
+                                            <button type="submit" class="btn btn-danger btn-xs delete"
+                                                data-target="{{$product->id}}">Delete Product
+                                            </button>
 
                                         </form>
                                     </td>

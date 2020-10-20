@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Frankyan Technology | Home : Frankyan</title>
     <link rel="stylesheet" href="{{asset('assets/css1/template.css')}}">
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="{{asset('assets/plugins/font-awesome/css/font-awesome.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700&display=swap" rel="stylesheet">
 
